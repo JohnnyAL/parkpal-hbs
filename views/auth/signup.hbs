@@ -1,0 +1,30 @@
+<h2>Sign up</h2>
+{{#if host}}
+<h4>Youre applying to become a host. If you dont want to click here</h4>
+{{/if}}
+<form action="/auth/signup" method="POST" id="signup-form">
+  <label for="username">Username</label>
+  <input id="username" type="text" name="username" placeholder="Username">
+
+  <br>
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" placeholder="Password">
+
+  <br>
+
+  {{#if host}}
+  <input type="checkbox" checked name="host" style="display: none">
+  {{/if}}
+
+  <button>Create account</button>
+</form>
+
+<p class="account-message">
+  Already have an account?
+  <a href="/auth/login">Log in</a>
+</p>
+
+{{#if errorMessage }}
+<div class="error-message">{{ errorMessage }}</div>
+{{/if}}

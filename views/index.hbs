@@ -1,0 +1,200 @@
+<div class="home-page-top">
+  <nav>
+    <div class="brand-box">
+      <img src="./images/car-logo.png" alt="car-logo" id="car-logo" />
+      <h1>ParkPal</h1>
+    </div>
+    <div class="nav-links">
+      <ul>
+        {{#if user}}
+        {{#if_eq user.role "basic"}}
+        <li><a href="/parking-spots/add">Become a host</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="/auth/logout">Log out</a></li>
+        {{else}}
+        <li><a href="/parking-spots/add">List a parking spot</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="/auth/logout">Log out</a></li>
+        {{/if_eq}}
+        {{else}}
+        <li><a href="/auth/become-host">Become a host</a></li>
+        <li><a href="/auth/signup">Sign up</a></li>
+        <li><a href="/auth/login">Log in</a></li>
+        <li><a href="#">Help</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+
+  <!-- section 1 -->
+  <section class="search-box">
+    {{#if user}}
+    <h3 class="welcome-note">Hi, {{user.username}}! Search for parking.</h3>
+    {{else}}
+    <h3>Find parking for work, leisure and more!</h3>
+    {{/if}}
+    <form action="parking-spots/parking-spots" method="get" class="search-form">
+      <div class="search-location">
+        <label for="where">Where are you going?</label>
+        <input type="text" placeholder="Enter city, state, or zip" id="where" name="search">
+      </div>
+      <div class="search-date">
+        <div class="search-date-from">
+          <label for="from-date">From:</label>
+          <input type="date" id="from-date" name="search">
+          <label for="from-time">at:</label>
+          <select name="search" id="from-time">
+            <option value="12:00 AM">12:00 AM</option>
+            <option value="12:30 AM">12:30 AM</option>
+            <option value="1:00 AM">1:00 AM</option>
+            <option value="1:30 AM">1:30 AM</option>
+            <option value="2:00 AM">2:00 AM</option>
+            <option value="2:30 AM">2:30 AM</option>
+            <option value="3:00 AM">3:00 AM</option>
+            <option value="3:30 AM">3:30 AM</option>
+            <option value="4:00 AM">4:00 AM</option>
+            <option value="4:30 AM">4:30 AM</option>
+            <option value="5:00 AM">5:00 AM</option>
+            <option value="5:30 AM">5:30 AM</option>
+            <option value="6:00 AM">6:00 AM</option>
+            <option value="6:30 AM">6:30 AM</option>
+            <option value="7:00 AM">7:00 AM</option>
+            <option value="7:30 AM">7:30 AM</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="8:30 AM">8:30 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="9:30 AM">9:30 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="10:30 AM">10:30 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="11:30 AM">11:30 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="12:30 PM">12:30 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="1:30 PM">1:30 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="2:30 PM">2:30 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="3:30 PM">3:30 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="5:30 PM">5:30 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="6:30 PM">6:30 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+            <option value="7:30 PM">7:30 PM</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="8:30 PM">8:30 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="9:30 PM">9:30 PM</option>
+            <option value="10:00 PM">10:00 PM</option>
+            <option value="10:30 PM">10:30 PM</option>
+            <option value="11:00 PM">11:00 PM</option>
+            <option value="11:30 PM">11:30 PM</option>
+          </select>
+        </div>
+        <div class="search-date-to">
+          <label for="to-date">To:</label>
+          <input type="date" id="to-date" name="search">
+          <label for="to-time">at:</label>
+          <select name="search" id="to-time">
+            <option value="12:00 AM">12:00 AM</option>
+            <option value="12:30 AM">12:30 AM</option>
+            <option value="1:00 AM">1:00 AM</option>
+            <option value="1:30 AM">1:30 AM</option>
+            <option value="2:00 AM">2:00 AM</option>
+            <option value="2:30 AM">2:30 AM</option>
+            <option value="3:00 AM">3:00 AM</option>
+            <option value="3:30 AM">3:30 AM</option>
+            <option value="4:00 AM">4:00 AM</option>
+            <option value="4:30 AM">4:30 AM</option>
+            <option value="5:00 AM">5:00 AM</option>
+            <option value="5:30 AM">5:30 AM</option>
+            <option value="6:00 AM">6:00 AM</option>
+            <option value="6:30 AM">6:30 AM</option>
+            <option value="7:00 AM">7:00 AM</option>
+            <option value="7:30 AM">7:30 AM</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="8:30 AM">8:30 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="9:30 AM">9:30 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="10:30 AM">10:30 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="11:30 AM">11:30 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="12:30 PM">12:30 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="1:30 PM">1:30 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="2:30 PM">2:30 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="3:30 PM">3:30 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="5:30 PM">5:30 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="6:30 PM">6:30 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+            <option value="7:30 PM">7:30 PM</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="8:30 PM">8:30 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="9:30 PM">9:30 PM</option>
+            <option value="10:00 PM">10:00 PM</option>
+            <option value="10:30 PM">10:30 PM</option>
+            <option value="11:00 PM">11:00 PM</option>
+            <option value="11:30 PM">11:30 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-long-term">
+        <span>OR</span><a href="#">Find long term parking</a>
+      </div>
+
+      <button type="submit">Search for Parking</button>
+    </form>
+    <a href="parking-spots/parking-spots">View spots</a>
+  </section>
+</div>
+
+<!-- section 2 -->
+<section class="general-info">
+  <h2>What we're all about</h2>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, iure provident. Officiis quae, alias
+    earum maiores beatae molestias! Aliquam perferendis temporibus molestiae aut nemo cum totam veniam dolor porro
+    quidem? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere saepe consectetur modi architecto sint
+    rem perferendis aliquid voluptate! Magnam eos distinctio in cum saepe obcaecati consectetur dicta quas, excepturi
+    mollitia.</p>
+</section>
+
+<footer>
+  <div class="company-info">
+    <h5>ParkPal</h5>
+    <ul>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </div>
+
+  <div class="contact-info">
+    <h5>Contact Info</h5>
+    <address class="address">ParkPal<br>123 Main Street,<br>Gainsville,<br>U S A</address>
+    <a href="#">Contact us</a>
+  </div>
+
+  <div class="follow-us">
+    <h5>Follow us</h5>
+    <ul>
+      <li><a href="#" target="_blank">Twitter</a></li>
+      <li><a href="#" target="_blank">Facebook</a></li>
+      <li><a href="#" target="_blank">Instagram</a></li>
+    </ul>
+  </div>
+</footer>

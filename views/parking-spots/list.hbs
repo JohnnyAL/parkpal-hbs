@@ -1,0 +1,20 @@
+{{#if spots}}
+<h1>Parking Spots</h1>
+
+<br>
+
+<ul>
+  {{#each spots}}
+  <li>{{name}} ${{price}}/hour</li>
+  {{/each}}
+</ul>
+{{else}}
+<h1>No parking spots available :(</h1>
+{{/if}}
+
+<br>
+
+<a href="/">Home</a>
+{{#if user}}
+<a href="/parking-spots/add">List a Parking Spot</a>
+{{/if}}

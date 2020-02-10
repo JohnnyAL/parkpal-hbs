@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "Poppins";
+  font-size: 16px; }
+
+.home-page-top {
+  height: 800px;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.brand-box {
+  font-family: "Leckerli One";
+  display: flex;
+  align-items: center;
+  font-size: 1.8em; }
+
+nav {
+  color: #0781b9;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(128, 128, 128, 0));
+  text-shadow: white 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%; }
+
+#car-logo {
+  width: 50px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-right: 7%; }
+
+.nav-links ul {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 600px; }
+
+.nav-links ul a {
+  color: black;
+  text-decoration: none; }
+
+.search-box {
+  color: #474747;
+  background-color: rgba(255, 255, 255, 0.774);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35%;
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 0 black;
+  height: 65%;
+  margin-top: 3%;
+  margin-left: 9%;
+  padding: 1%; }
+
+.search-box h3 {
+  font-size: 2em; }
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 80%;
+  padding-top: 6%; }
+
+.search-location {
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%; }
+
+.search-date {
+  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  text-emphasis: none;
+  text-align: left;
+  width: 80%; }
+
+.search-date-from {
+  display: flex;
+  flex-direction: column;
+  width: 45%; }
+
+.search-date-to {
+  display: flex;
+  flex-direction: column;
+  width: 45%; }
+
+.search-form input {
+  font-family: "Poppins";
+  font-size: 1em;
+  padding: 1%;
+  border-radius: 0.2em; }
+
+.search-long-term {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 16%; }
+
+.search-long-term a {
+  font-size: 1.2em;
+  color: #0781b9;
+  text-decoration: none; }
+
+.search-box button {
+  font-size: 2em;
+  color: white;
+  box-shadow: 1px 1px 5px 0 gray;
+  background-color: #30ac65;
+  padding: 2.5% 19%;
+  margin-bottom: 5%;
+  border-radius: 0.2em; }
+
+/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map */
