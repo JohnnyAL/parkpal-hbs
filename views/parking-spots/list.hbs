@@ -5,7 +5,7 @@
 
 <ul>
   {{#each spots}}
-  <li>{{name}} ${{price}}/hour</li>
+  <li><a href="/parking-spots/detail/{{_id}}">{{name}} ${{price}}/hour</a></li>
   {{/each}}
 </ul>
 {{else}}

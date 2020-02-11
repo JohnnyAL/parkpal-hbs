@@ -1,0 +1,35 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+<h2>{{spot.name}}</h2>
+<h3>Price (per hour): {{spot.price}}</h3>
+
+<br>
+
+<p>Address: {{spot.address}}</p>
+<p>Description: {{spot.description}}</p>
+<p>Size: {{spot.size}}</p>
+<p>Type: {{spot.type}}</p>
+
+<br>
+
+<p>Posted by {{spot.owner.username}}</p>
+
+{{!-- <h2>Comments</h2>
+<div id="comment-box">
+  {{#each room.comments}}
+  <p>{{content}} <i>{{author.username}}</i></p>
+  {{/each}}
+</div> --}}
+
+{{!-- 
+{{#if user}}
+<form>
+  <label for="message">Add a comment</label>
+  <input type="text" name="content" id="message">
+  <button type="submit">Send</button>
+</form>
+{{/if}} --}}
+
+{{#if showDelete}}
+<a href="/parking-spots/delete/{{spot._id}}">Delete this posting</a>
+{{/if}}
