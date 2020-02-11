@@ -1,0 +1,49 @@
+<h1>Edit Your Post</h1>
+
+<form action="/parking-spots/edit/{{spot._id}}" method="POST">
+  <label for="name">Name: </label>
+  <input type="text" value="{{spot.name}}" name="name" id="name">
+
+  <br>
+
+  <label for="address">Address: </label>
+  <input type="text" value="{{spot.address}}" name="address" id="address">
+
+  <br>
+
+  <label for="description">Description: </label>
+  <input type="textarea" value="{{spot.description}}" name="description" id="description">
+
+  <br>
+
+  <label for="size">Size: </label>
+  <select value="{{spot.size}}" name="size" id="size">
+    <option value="Compact" {{#if_eq spot.size "Compact"}}selected{{/if_eq}}>Compact</option>
+    <option value="Midsized" {{#if_eq spot.size "Midsized"}}selected{{/if_eq}}>Midsized</option>
+    <option value="Large" {{#if_eq spot.size "Large"}}selected{{/if_eq}}>Large</option>
+  </select>
+
+  <br>
+
+  <label for="type">Type: </label>
+  <select value="{{spot.type}}" name="type" id="type">
+    <option value="Driveway" {{#if_eq spot.type "Driveway"}}selected{{/if_eq}}>Driveway</option>
+    <option value="Street" {{#if_eq spot.type "Street"}}selected{{/if_eq}}>Street</option>
+    <option value="Parking lot" {{#if_eq spot.type "Parking lot"}}selected{{/if_eq}}>Parking lot</option>
+    <option value="Garage" {{#if_eq spot.type "Garage"}}selected{{/if_eq}}>Garage</option>
+  </select>
+
+  <br>
+
+  <label for="price">Price per hour (in USD): </label>
+  <input type="number" value="{{spot.price}}" name="price" id="price">
+
+  <br>
+
+  <button type="submit">Submit</button>
+</form>
+
+
+{{#if_eq spot.name "test"}}
+<h1>works</h1>
+{{/if_eq}}

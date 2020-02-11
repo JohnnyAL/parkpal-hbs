@@ -30,6 +30,16 @@
 </form>
 {{/if}} --}}
 
+{{#if showEdit}}
+<a href="/parking-spots/edit/{{spot._id}}">Edit this posting</a>
+{{/if}}
+
+<br>
+
 {{#if showDelete}}
 <a href="/parking-spots/delete/{{spot._id}}">Delete this posting</a>
 {{/if}}
+
+<br>
+
+<a href="/parking-spots/list">Back to List</a>

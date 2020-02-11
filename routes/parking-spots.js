@@ -25,10 +25,6 @@ router.get("/add", loginCheck, (req, res) => {
   res.render("parking-spots/add.hbs", { user: req.session.user });
 });
 
-// router.get("/become-host", loginCheck, (req, res) => {
-//   res.render("parking-spots/add.hbs", { role: req.session.user.role });
-// });
-
 router.post("/add", loginCheck, (req, res, next) => {
   const { name, address, description, size, type, price } = req.body;
   Spot.create({
@@ -72,17 +68,49 @@ router.get("/detail/:id", (req, res, next) => {
     })
     .then(spot => {
       let showDelete = false;
+      let showEdit = false;
       if (
         req.session.user &&
         spot.owner._id.toString() === req.session.user._id.toString() //got error in console here
       ) {
         showDelete = true;
+        showEdit = true;
       }
       res.render("parking-spots/detail.hbs", {
         spot,
         showDelete: showDelete,
+        showEdit: showEdit,
         user: req.session.user
       });
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+router.get("/edit/:id", loginCheck, (req, res) => {
+  Spot.findById(req.params.id).then(spot => {
+    console.log("spot", spot);
+    res.render("parking-spots/edit.hbs", { spot: spot });
+  });
+});
+
+router.post("/edit/:id", (req, res, next) => {
+  const { name, address, description, size, type, price } = req.body;
+  Spot.updateOne(
+    { _id: req.params.id },
+    {
+      name,
+      address,
+      description,
+      size,
+      type,
+      price,
+      owner: req.session.user._id
+    }
+  )
+    .then(() => {
+      res.redirect(`/parking-spots/detail/${req.params.id}`);
     })
     .catch(err => {
       next(err);
