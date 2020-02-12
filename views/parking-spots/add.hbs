@@ -1,18 +1,43 @@
 <h1>Add a Parking Spot</h1>
 
+<br>
+
 <form action="/parking-spots/add" method="POST">
   <label for="name">Name: </label>
   <input type="text" name="name" id="name">
-
   <br>
-
-  <label for="address">Address: </label>
-  <input type="text" name="address" id="address">
-
-  <br>
-
   <label for="description">Description: </label>
-  <input type="textarea" rows="6" cols="33" name="description" id="description">
+  <input type="textarea" name="description" id="description">
+
+  <br>
+  <br>
+
+  <h4>Address:</h4>
+  <label for="street">Street address: </label>
+  <input type="text" name="streetAddress" id="street">
+  <br>
+  <label for="city">City: </label>
+  <input type="text" name="city" id="city">
+  <br>
+  <label for="state">State: </label>
+  <input type="text" name="state" id="state">
+  <br>
+  <label for="zip">Zip Code: </label>
+  <input type="text" name="zipCode" id="zip">
+  <br>
+  <label for="country">Country: </label>
+  <input type="text" name="country" id="country">
+
+  <br>
+  <br>
+
+  <label for="type">Type: </label>
+  <select name="type" id="type">
+    <option value="Driveway">Driveway</option>
+    <option value="Street">Street</option>
+    <option value="Parking lot">Parking lot</option>
+    <option value="Garage">Garage</option>
+  </select>
 
   <br>
 
@@ -24,15 +49,6 @@
   </select>
 
   <br>
-
-  <label for="type">Type: </label>
-  <select name="type" id="type">
-    <option value="Driveway">Driveway</option>
-    <option value="Street">Street</option>
-    <option value="Parking lot">Parking lot</option>
-    <option value="Garage">Garage</option>
-  </select>
-
   <br>
 
   <label for="avail-start-date">Available from:</label>
@@ -50,10 +66,12 @@
   <input type="time" id="avail-end-time" name="endTime">
 
   <br>
+  <br>
 
   <label for="price">Price per hour (in USD): </label>
   <input type="number" name="price" id="price">
 
+  <br>
   <br>
 
   <button type="submit">Submit</button>

@@ -3,8 +3,16 @@ const { Schema } = mongoose;
 
 const spotSchema = new Schema({
   name: String,
-  address: String, //long latt package --> make an array of 2 strings for long and latt
   description: String,
+  streetAddress: String,
+  city: String,
+  state: String,
+  zipCode: String,
+  country: String,
+  geoLocation: {
+    longitude: Number,
+    latitude: Number
+  },
   size: {
     type: String,
     enum: ["Compact", "Midsized", "Large"]

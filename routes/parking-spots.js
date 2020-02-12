@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Spot = require("../models/Spot");
 const User = require("../models/User");
+const geocoder = require("../utils/geocoder");
 
 router.get("/list", (req, res) => {
   Spot.find()
@@ -14,6 +15,15 @@ router.get("/list", (req, res) => {
 });
 
 router.get("/filtered-query", (req, res) => {
+  // console.log("SEARCH", req.query);
+  // geocoder
+  //   .geocode("3025 Santa Paula dr., concord CA, 94518, US")
+  //   .then(function(res) {
+  //     console.log(res);
+  //   })
+  //   .catch(function(err) {
+  //     console.log(err);
+  //   });
   Spot.find({
     $and: [
       { startTime: { $gte: req.query.startDate + " " + req.query.startTime } },
@@ -43,8 +53,12 @@ router.get("/add", loginCheck, (req, res) => {
 router.post("/add", loginCheck, (req, res, next) => {
   const {
     name,
-    address,
     description,
+    streetAddress,
+    city,
+    state,
+    zipCode,
+    country,
     size,
     type,
     startDate,
@@ -54,38 +68,57 @@ router.post("/add", loginCheck, (req, res, next) => {
     price
   } = req.body;
 
-  //geocoder
-  Spot.create({
-    name,
-    address,
-    description,
-    size,
-    type,
-    startDate,
-    endDate,
-    startTime: startDate + " " + startTime,
-    endTime: endDate + " " + endTime,
-    price,
-    owner: req.session.user._id
-  })
-    .then(createdSpot => {
-      if (req.session.user.role === "basic") {
-        return User.findByIdAndUpdate(
-          req.session.user._id,
-          { role: "host" },
-          { new: true }
-        ).then(updatedUser => {
-          return {
-            user: updatedUser,
-            createdSpot: createdSpot
-          };
-        });
-      }
-      return { user: req.session.user, createdSpot: createdSpot };
+  let longitude;
+  let latitude;
+
+  geocoder
+    .geocode(
+      `${req.body.streetAddress}, ${req.body.city}, ${req.body.state} ${req.body.zipCode}, ${req.body.country}`
+    )
+    .then(res => {
+      let longitude = res[0].longitude;
+      let latitude = res[0].latitude;
+      // console.log("LONGITUDE", longitude, "LATITUDE", latitude);
+      return { longitude, latitude };
     })
-    .then(result => {
-      req.session.user = result.user;
-      res.redirect(`/parking-spots/detail/${result.createdSpot._id}`);
+    .then(geoLocation => {
+      return Spot.create({
+        name,
+        description,
+        streetAddress,
+        city,
+        state,
+        zipCode,
+        country,
+        geoLocation: geoLocation,
+        size,
+        type,
+        startDate,
+        endDate,
+        startTime: startDate + " " + startTime,
+        endTime: endDate + " " + endTime,
+        price,
+        owner: req.session.user._id
+      })
+        .then(createdSpot => {
+          if (req.session.user.role === "basic") {
+            return User.findByIdAndUpdate(
+              req.session.user._id,
+              { role: "host" },
+              { new: true }
+            ).then(updatedUser => {
+              return {
+                user: updatedUser,
+                createdSpot: createdSpot
+              };
+            });
+          }
+          return { user: req.session.user, createdSpot: createdSpot };
+        })
+        .then(result => {
+          req.session.user = result.user;
+          res.redirect(`/parking-spots/detail/${result.createdSpot._id}`);
+        });
     })
     .catch(err => {
       next(err);
@@ -130,8 +163,12 @@ router.get("/edit/:id", loginCheck, (req, res) => {
 router.post("/edit/:id", (req, res, next) => {
   const {
     name,
-    address,
     description,
+    streetAddress,
+    city,
+    state,
+    zipCode,
+    country,
     size,
     type,
     startDate,
@@ -140,24 +177,44 @@ router.post("/edit/:id", (req, res, next) => {
     endTime,
     price
   } = req.body;
-  Spot.updateOne(
-    { _id: req.params.id },
-    {
-      name,
-      address,
-      description,
-      size,
-      type,
-      startDate,
-      endDate,
-      startTime: startDate + " " + startTime,
-      endTime: endDate + " " + endTime,
-      price,
-      owner: req.session.user._id
-    }
-  )
-    .then(() => {
-      res.redirect(`/parking-spots/detail/${req.params.id}`);
+
+  let longitude;
+  let latitude;
+
+  geocoder
+    .geocode(
+      `${req.body.streetAddress}, ${req.body.city}, ${req.body.state} ${req.body.zipCode}, ${req.body.country}`
+    )
+    .then(res => {
+      let longitude = res[0].longitude;
+      let latitude = res[0].latitude;
+      // console.log("LONGITUDE", longitude, "LATITUDE", latitude);
+      return { longitude, latitude };
+    })
+    .then(geoLocation => {
+      return Spot.updateOne(
+        { _id: req.params.id },
+        {
+          name,
+          description,
+          streetAddress,
+          city,
+          state,
+          zipCode,
+          country,
+          geoLocation: geoLocation,
+          size,
+          type,
+          startDate,
+          endDate,
+          startTime: startDate + " " + startTime,
+          endTime: endDate + " " + endTime,
+          price,
+          owner: req.session.user._id
+        }
+      ).then(() => {
+        res.redirect(`/parking-spots/detail/${req.params.id}`);
+      });
     })
     .catch(err => {
       next(err);
