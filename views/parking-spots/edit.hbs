@@ -35,6 +35,22 @@
 
   <br>
 
+  <label for="avail-start-date">Available from:</label>
+  <input type="date" id="avail-start-date" name="startDate">
+
+  <label for="avail-start-time">at:</label>
+  <input type="time" id="avail-start-time" name="startTime">
+
+  <br>
+
+  <label for="avail-end-date">Available to:</label>
+  <input type="date" id="avail-end-date" name="endDate">
+
+  <label for="avail-end-time">at:</label>
+  <input type="time" id="avail-end-time" name="endTime">
+
+  <br>
+
   <label for="price">Price per hour (in USD): </label>
   <input type="number" value="{{spot.price}}" name="price" id="price">
 
@@ -43,7 +59,4 @@
   <button type="submit">Submit</button>
 </form>
 
-
-{{#if_eq spot.name "test"}}
-<h1>works</h1>
-{{/if_eq}}
+<a href="/parking-spots/detail/{{spot._id}}">Back</a>

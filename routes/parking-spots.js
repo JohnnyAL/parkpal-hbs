@@ -13,6 +13,21 @@ router.get("/list", (req, res) => {
     });
 });
 
+router.get("/filtered-query", (req, res) => {
+  Spot.find({
+    $and: [
+      { startTime: { $gte: req.query.startDate + " " + req.query.startTime } },
+      { endTime: { $lte: req.query.endDate + " " + req.query.endTime } }
+    ]
+  })
+    .then(spots => {
+      res.render("parking-spots/list.hbs", { spots, user: req.session.user });
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 const loginCheck = (req, res, next) => {
   if (req.session.user) {
     next();
@@ -26,13 +41,30 @@ router.get("/add", loginCheck, (req, res) => {
 });
 
 router.post("/add", loginCheck, (req, res, next) => {
-  const { name, address, description, size, type, price } = req.body;
+  const {
+    name,
+    address,
+    description,
+    size,
+    type,
+    startDate,
+    endDate,
+    startTime,
+    endTime,
+    price
+  } = req.body;
+
+  //geocoder
   Spot.create({
     name,
     address,
     description,
     size,
     type,
+    startDate,
+    endDate,
+    startTime: startDate + " " + startTime,
+    endTime: endDate + " " + endTime,
     price,
     owner: req.session.user._id
   })
@@ -96,7 +128,18 @@ router.get("/edit/:id", loginCheck, (req, res) => {
 });
 
 router.post("/edit/:id", (req, res, next) => {
-  const { name, address, description, size, type, price } = req.body;
+  const {
+    name,
+    address,
+    description,
+    size,
+    type,
+    startDate,
+    endDate,
+    startTime,
+    endTime,
+    price
+  } = req.body;
   Spot.updateOne(
     { _id: req.params.id },
     {
@@ -105,6 +148,10 @@ router.post("/edit/:id", (req, res, next) => {
       description,
       size,
       type,
+      startDate,
+      endDate,
+      startTime: startDate + " " + startTime,
+      endTime: endDate + " " + endTime,
       price,
       owner: req.session.user._id
     }

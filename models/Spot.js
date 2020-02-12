@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const spotSchema = new Schema({
   name: String,
-  address: String,
+  address: String, //long latt package --> make an array of 2 strings for long and latt
   description: String,
   size: {
     type: String,
@@ -13,6 +13,10 @@ const spotSchema = new Schema({
     type: String,
     enum: ["Driveway", "Street", "Parking lot", "Garage"]
   },
+  startDate: Date,
+  endDate: Date,
+  startTime: { type: Date, default: Date.now() },
+  endTime: { type: Date, default: Date.now() },
   price: Number,
   owner: {
     type: Schema.Types.ObjectId,
