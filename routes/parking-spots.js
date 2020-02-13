@@ -54,6 +54,7 @@ router.get("/filtered-query", (req, res, next) => {
       }).then(spots => {
         res.render("parking-spots/list.hbs", {
           spots,
+          spotDetail: JSON.stringify(spots),
           user: req.session.user
         });
       });
