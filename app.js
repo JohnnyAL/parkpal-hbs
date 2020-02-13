@@ -20,6 +20,9 @@ mongoose
     console.error("Error connecting to mongo", err);
   });
 
+const Spot = require("./models/Spot");
+Spot.createIndexes();
+
 const app_name = require("./package.json").name;
 const debug = require("debug")(
   `${app_name}:${path.basename(__filename).split(".")[0]}`

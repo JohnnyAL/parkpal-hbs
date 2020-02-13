@@ -10,8 +10,15 @@ const spotSchema = new Schema({
   zipCode: String,
   country: String,
   geoLocation: {
-    longitude: Number,
-    latitude: Number
+    type: {
+      type: String,
+      enum: ["Point"],
+      required: true
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
   },
   size: {
     type: String,
@@ -39,5 +46,6 @@ const spotSchema = new Schema({
 });
 
 const Spot = mongoose.model("Spot", spotSchema);
+spotSchema.index({ geoLocation: "2dsphere" });
 
 module.exports = Spot;

@@ -14,24 +14,45 @@ router.get("/list", (req, res) => {
     });
 });
 
-router.get("/filtered-query", (req, res) => {
-  // console.log("SEARCH", req.query);
-  // geocoder
-  //   .geocode("3025 Santa Paula dr., concord CA, 94518, US")
-  //   .then(function(res) {
-  //     console.log(res);
-  //   })
-  //   .catch(function(err) {
-  //     console.log(err);
-  //   });
-  Spot.find({
-    $and: [
-      { startTime: { $gte: req.query.startDate + " " + req.query.startTime } },
-      { endTime: { $lte: req.query.endDate + " " + req.query.endTime } }
-    ]
-  })
-    .then(spots => {
-      res.render("parking-spots/list.hbs", { spots, user: req.session.user });
+router.get("/filtered-query", (req, res, next) => {
+  let longitude;
+  let latitude;
+  console.log("LOCATION", req.query.location);
+  geocoder
+    .geocode(req.query.location)
+    .then(res => {
+      let longitude = res[0].longitude;
+      let latitude = res[0].latitude;
+      // console.log("LONGITUDE", longitude, "LATITUDE", latitude);
+      console.log("LONGITUDE", longitude, "LATITUDE", latitude);
+      return { longitude, latitude };
+    })
+    .then(geoLocation => {
+      console.log("GEOLOACTION", geoLocation);
+      return Spot.find({
+        $and: [
+          {
+            startTime: { $gte: req.query.startDate + " " + req.query.startTime }
+          },
+          { endTime: { $lte: req.query.endDate + " " + req.query.endTime } },
+          {
+            geoLocation: {
+              $near: {
+                $maxDistance: 200000,
+                $geometry: {
+                  type: "Point",
+                  coordinates: [geoLocation.longitude, geoLocation.latitude]
+                }
+              }
+            }
+          }
+        ]
+      }).then(spots => {
+        res.render("parking-spots/list.hbs", {
+          spots,
+          user: req.session.user
+        });
+      });
     })
     .catch(err => {
       next(err);
@@ -90,7 +111,10 @@ router.post("/add", loginCheck, (req, res, next) => {
         state,
         zipCode,
         country,
-        geoLocation: geoLocation,
+        geoLocation: {
+          type: "Point",
+          coordinates: [geoLocation.longitude, geoLocation.latitude]
+        },
         size,
         type,
         startDate,
@@ -101,6 +125,7 @@ router.post("/add", loginCheck, (req, res, next) => {
         owner: req.session.user._id
       })
         .then(createdSpot => {
+          console.log(createdSpot);
           if (req.session.user.role === "basic") {
             return User.findByIdAndUpdate(
               req.session.user._id,
