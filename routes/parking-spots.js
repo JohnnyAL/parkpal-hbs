@@ -7,7 +7,11 @@ const geocoder = require("../utils/geocoder");
 router.get("/list", (req, res) => {
   Spot.find()
     .then(spots => {
-      res.render("parking-spots/list.hbs", { spots, user: req.session.user });
+      res.render("parking-spots/list.hbs", {
+        spots,
+        spotDetail: JSON.stringify(spots),
+        user: req.session.user
+      });
     })
     .catch(err => {
       next(err);
@@ -168,6 +172,7 @@ router.get("/detail/:id", (req, res, next) => {
       }
       res.render("parking-spots/detail.hbs", {
         spot,
+        spotDetail: JSON.stringify(spot),
         showDelete: showDelete,
         showEdit: showEdit,
         user: req.session.user

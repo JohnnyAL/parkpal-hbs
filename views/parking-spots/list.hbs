@@ -18,3 +18,32 @@
 {{#if user}}
 <a href="/parking-spots/add">List a Parking Spot</a>
 {{/if}}
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+<script>
+  let spotDetail = {{{ spotDetail }}}
+  mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obm55YWwiLCJhIjoiY2s2ZmQyM29pMHBsNzNlbnZxamNxNTRoYSJ9.27j6sVOZDtK2BXTcKqnEcw';
+  let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-122.4399061, 37.7590262],
+    zoom: 10.5,
+    attributionControl: false
+  });
+
+  const nav = new mapboxgl.NavigationControl();
+  map.addControl(nav, "top-right"); // where map refers to the name of our instance of Map  
+
+  window.onload = () => {
+    console.log(spotDetail)
+    spotDetail.forEach((elem, index) => {
+      const marker = new mapboxgl.Marker({
+        draggable: false// we can set a marker to be draggable (we'll see how that is useful), default is false
+      });
+      marker.setLngLat([elem.geoLocation.coordinates[0], elem.geoLocation.coordinates[1]]);
+      marker.addTo(map);
+    });
+  };
+
+</script>
