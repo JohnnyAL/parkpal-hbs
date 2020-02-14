@@ -235,7 +235,10 @@ router.post("/edit/:id", (req, res, next) => {
           state,
           zipCode,
           country,
-          geoLocation: geoLocation,
+          geoLocation: {
+            type: "Point",
+            coordinates: [geoLocation.longitude, geoLocation.latitude]
+          },
           size,
           type,
           startDate,
@@ -245,7 +248,7 @@ router.post("/edit/:id", (req, res, next) => {
           price,
           owner: req.session.user._id
         }
-      ).then(spot => {
+      ).then(() => {
         res.redirect(`/parking-spots/detail/${req.params.id}`);
       });
     })
