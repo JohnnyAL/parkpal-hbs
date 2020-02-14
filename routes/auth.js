@@ -30,7 +30,7 @@ router.post("/signup", (req, res, next) => {
   }
   if (password.length < 6) {
     res.render("auth/signup", {
-      errorMessage: "Password must be at least 6 characters"
+      errorMessage: "Password must be at least 6 characters."
     });
     return;
   }
@@ -39,7 +39,7 @@ router.post("/signup", (req, res, next) => {
     .then(user => {
       if (user) {
         res.render("auth/signup", {
-          errorMessage: "Username already taken. Please try again"
+          errorMessage: "Username already taken. Please try again."
         });
         return;
       }

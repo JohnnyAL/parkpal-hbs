@@ -3,7 +3,7 @@
     <h1>Log in</h1>
 
     {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
+    <p class="error-message">{{errorMessage}}</p>
     {{/if}}
 
     <form action="/auth/login" method="post">

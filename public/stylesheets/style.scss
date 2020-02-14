@@ -153,7 +153,7 @@ nav {
 }
 .available-spots {
   background-color: #a3e2ff2f;
-  height: 800px;
+  height: 1600px;
   display: flex;
   justify-content: space-evenly;
   padding-top: 5%;
@@ -163,10 +163,14 @@ nav {
   text-decoration: none;
 }
 
+.spot-listing {
+  width: 40%;
+}
+
 .spot-listing ul {
   list-style: none;
   background-color: rgba(255, 255, 255, 0.774);
-  border-radius: 2%;
+  border-radius: 10px;
   box-shadow: 1px 1px 5px 0 black;
   padding: 2%;
   line-height: 2em;
@@ -271,6 +275,26 @@ nav {
 
 .add-edit a {
   text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.spot-gen-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-button {
+  background-color: #31aa6562;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 2% 1%;
+  width: 40%;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
