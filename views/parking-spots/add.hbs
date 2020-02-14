@@ -1,80 +1,84 @@
-<h1>Add a Parking Spot</h1>
-
-<br>
-
-<form action="/parking-spots/add" method="POST">
-  <label for="name">Name: </label>
-  <input type="text" name="name" id="name">
-  <br>
-  <label for="description">Description: </label>
-  <input type="textarea" name="description" id="description">
-
-  <br>
-  <br>
-
-  <h4>Address:</h4>
-  <label for="street">Street address: </label>
-  <input type="text" name="streetAddress" id="street">
-  <br>
-  <label for="city">City: </label>
-  <input type="text" name="city" id="city">
-  <br>
-  <label for="state">State: </label>
-  <input type="text" name="state" id="state">
-  <br>
-  <label for="zip">Zip Code: </label>
-  <input type="text" name="zipCode" id="zip">
-  <br>
-  <label for="country">Country: </label>
-  <input type="text" name="country" id="country">
-
-  <br>
-  <br>
-
-  <label for="type">Type: </label>
-  <select name="type" id="type">
-    <option value="Driveway">Driveway</option>
-    <option value="Street">Street</option>
-    <option value="Parking lot">Parking lot</option>
-    <option value="Garage">Garage</option>
-  </select>
+<div class="add-edit">
+  <h1>Add a Parking Spot</h1>
 
   <br>
 
-  <label for="size">Size: </label>
-  <select name="size" id="size">
-    <option value="Compact">Compact</option>
-    <option value="Midsized">Midsized</option>
-    <option value="Large">Large</option>
-  </select>
+  <form action="/parking-spots/add" method="POST">
+    <div class="add-edit-form">
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="name">
+      <br>
+      <label for="description">Description: </label>
+      <input type="textarea" name="description" id="description">
 
-  <br>
-  <br>
+      <br>
+      <br>
 
-  <label for="avail-start-date">Available from:</label>
-  <input type="date" id="avail-start-date" name="startDate">
+      <h4>Address</h4>
+      <label for="street">Street address: </label>
+      <input type="text" name="streetAddress" id="street">
+      <br>
+      <label for="city">City: </label>
+      <input type="text" name="city" id="city">
+      <br>
+      <label for="state">State: </label>
+      <input type="text" name="state" id="state">
+      <br>
+      <label for="zip">Zip Code: </label>
+      <input type="text" name="zipCode" id="zip">
+      <br>
+      <label for="country">Country: </label>
+      <input type="text" name="country" id="country">
 
-  <label for="avail-start-time">at:</label>
-  <input type="time" id="avail-start-time" name="startTime">
+      <br>
+      <br>
 
-  <br>
+      <label for="type">Type: </label>
+      <select name="type" id="type">
+        <option value="Driveway">Driveway</option>
+        <option value="Street">Street</option>
+        <option value="Parking lot">Parking lot</option>
+        <option value="Garage">Garage</option>
+      </select>
 
-  <label for="avail-end-date">Available to:</label>
-  <input type="date" id="avail-end-date" name="endDate">
+      <br>
 
-  <label for="avail-end-time">at:</label>
-  <input type="time" id="avail-end-time" name="endTime">
+      <label for="size">Size: </label>
+      <select name="size" id="size">
+        <option value="Compact">Compact</option>
+        <option value="Midsized">Midsized</option>
+        <option value="Large">Large</option>
+      </select>
 
-  <br>
-  <br>
+      <br>
+      <br>
 
-  <label for="price">Price per hour (in USD): </label>
-  <input type="number" name="price" id="price">
+      <label for="avail-start-date">Available from:</label>
+      <input type="date" id="avail-start-date" name="startDate">
 
-  <br>
-  <br>
+      <label for="avail-start-time">at:</label>
+      <input type="time" id="avail-start-time" name="startTime">
 
-  <button type="submit">Submit</button>
-</form>
+      <br>
 
-<a href="/">Home</a>
+      <label for="avail-end-date">Available to:</label>
+      <input type="date" id="avail-end-date" name="endDate">
+
+      <label for="avail-end-time">at:</label>
+      <input type="time" id="avail-end-time" name="endTime">
+
+      <br>
+      <br>
+
+      <label for="price">Price per hour (in USD): </label>
+      <input type="number" name="price" id="price">
+
+      <br>
+      <br>
+
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <a href="/">Home</a>
+</div>

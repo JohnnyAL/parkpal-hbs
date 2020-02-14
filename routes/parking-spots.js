@@ -187,7 +187,9 @@ router.get("/detail/:id", (req, res, next) => {
 router.get("/edit/:id", loginCheck, (req, res) => {
   Spot.findById(req.params.id).then(spot => {
     console.log("spot", spot);
-    res.render("parking-spots/edit.hbs", { spot: spot });
+    res.render("parking-spots/edit.hbs", {
+      spot: spot
+    });
   });
 });
 
@@ -243,7 +245,7 @@ router.post("/edit/:id", (req, res, next) => {
           price,
           owner: req.session.user._id
         }
-      ).then(() => {
+      ).then(spot => {
         res.redirect(`/parking-spots/detail/${req.params.id}`);
       });
     })

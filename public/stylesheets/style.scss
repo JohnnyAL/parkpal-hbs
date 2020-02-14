@@ -69,7 +69,7 @@ nav {
   border-radius: 2%;
   box-shadow: 1px 1px 5px 0 black;
   height: 65%;
-  margin-top: 3%;
+  margin-top: 5%;
   margin-left: 9%;
   padding: 1%;
 }
@@ -145,6 +145,132 @@ nav {
   padding: 2.5% 19%;
   margin-bottom: 5%;
   border-radius: 0.2em;
+}
+
+// listing page
+.search-box a {
+  text-decoration: none;
+}
+.available-spots {
+  background-color: #a3e2ff2f;
+  height: 800px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 5%;
+}
+
+.available-spots a {
+  text-decoration: none;
+}
+
+.spot-listing ul {
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.774);
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 0 black;
+  padding: 2%;
+  line-height: 2em;
+}
+
+.detail {
+  background-color: #a3e2ff2f;
+  height: 800px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3%;
+}
+
+.detail a {
+  text-decoration: none;
+}
+
+.spot-details {
+  background-color: rgba(255, 255, 255, 0.774);
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 0 black;
+  width: 40%;
+  height: 83%;
+  padding: 1%;
+}
+
+.spot-details span {
+  font-weight: bold;
+}
+
+.auth {
+  background-color: #a3e2ff2f;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form {
+  background-color: rgba(255, 255, 255, 0.774);
+  text-align: center;
+  height: 50%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 0 black;
+  padding-top: 3%;
+  margin-top: 5%;
+  padding-bottom: 1%;
+}
+
+.auth-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.auth-inputs button {
+  width: 20%;
+  padding: 2%;
+}
+
+.auth-inputs input {
+  width: 40%;
+  font-family: "Poppins";
+  padding: 1%;
+  border-radius: 0.2em;
+}
+
+.add-edit {
+  background-color: #a3e2ff2f;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-edit-form {
+  background-color: rgba(255, 255, 255, 0.774);
+  border-radius: 2%;
+  box-shadow: 1px 1px 5px 0 black;
+  width: 500px;
+  padding-top: 3%;
+  padding: 3%;
+  line-height: 2em;
+  margin-bottom: 2%;
+}
+
+.add-edit-form input {
+  font-family: "Poppins";
+  padding: 0.5%;
+  border-radius: 0.2em;
+}
+
+.add-edit-form button {
+  width: 100%;
+  padding: 2%;
+  font-size: 1.5em;
+}
+
+.add-edit a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

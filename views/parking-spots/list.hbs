@@ -1,26 +1,30 @@
-{{#if spots}}
-<h1>Parking Spots</h1>
+<div class="available-spots">
+  <div class="spot-listing">
+    {{#if spots}}
+    <h1>Available Parking Spots</h1>
 
-<br>
+    <br>
 
-<ul>
-  {{#each spots}}
-  <li><a href="/parking-spots/detail/{{_id}}">{{name}} ${{price}}/hour</a></li>
-  {{/each}}
-</ul>
-{{else}}
-<h1>No parking spots available :(</h1>
-{{/if}}
+    <ul>
+      {{#each spots}}
+      <li><a href="/parking-spots/detail/{{_id}}">{{name}} - ${{price}}/hour</a></li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <h1>No parking spots available :(</h1>
+    {{/if}}
 
-<br>
+    <br>
 
-<a href="/">Home</a>
-{{#if user}}
-<a href="/parking-spots/add">List a Parking Spot</a>
-{{/if}}
+    <a href="/">Home</a>
+    <br>
+    {{#if user}}
+    <a href="/parking-spots/add">List a Parking Spot</a>
+    {{/if}}
+  </div>
+  <div id='map' style='width: 600px; height: 500px; border-radius: 2%; box-shadow: 1px 1px 5px 0 black;'></div>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
-
+</div>
 <script>
   let spotDetail = {{{ spotDetail }}}
   mapboxgl.accessToken = 'pk.eyJ1Ijoiam9obm55YWwiLCJhIjoiY2s2ZmQyM29pMHBsNzNlbnZxamNxNTRoYSJ9.27j6sVOZDtK2BXTcKqnEcw';
