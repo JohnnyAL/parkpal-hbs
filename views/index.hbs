@@ -9,20 +9,15 @@
         {{#if user}}
         {{#if_eq user.role "basic"}}
         <li><a href="/parking-spots/add">Become a host</a></li>
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">Help</a></li>
         <li><a href="/auth/logout">Log out</a></li>
         {{else}}
         <li><a href="/parking-spots/add">List a parking spot</a></li>
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">Help</a></li>
         <li><a href="/auth/logout">Log out</a></li>
         {{/if_eq}}
         {{else}}
         <li><a href="/auth/become-host">Become a host</a></li>
         <li><a href="/auth/signup">Sign up</a></li>
         <li><a href="/auth/login">Log in</a></li>
-        <li><a href="#">Help</a></li>
         {{/if}}
       </ul>
     </div>
@@ -54,11 +49,6 @@
           <input type="time" id="to-time" name="endTime">
         </div>
       </div>
-
-      <div class="search-long-term">
-        <span>OR</span><a href="#">Find long term parking</a>
-      </div>
-
       <button type="submit">Search for Parking</button>
     </form>
     <a href="parking-spots/list">View all available</a>
