@@ -6,14 +6,14 @@ const geocoder = require("../utils/geocoder");
 
 router.get("/list", (req, res) => {
   Spot.find()
-    .then(spots => {
+    .then((spots) => {
       res.render("parking-spots/list.hbs", {
         spots,
         spotDetail: JSON.stringify(spots),
-        user: req.session.user
+        user: req.session.user,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
@@ -24,42 +24,42 @@ router.get("/filtered-query", (req, res, next) => {
   console.log("LOCATION", req.query.location);
   geocoder
     .geocode(req.query.location)
-    .then(res => {
+    .then((res) => {
       let longitude = res[0].longitude;
       let latitude = res[0].latitude;
       // console.log("LONGITUDE", longitude, "LATITUDE", latitude);
       console.log("LONGITUDE", longitude, "LATITUDE", latitude);
       return { longitude, latitude };
     })
-    .then(geoLocation => {
+    .then((geoLocation) => {
       console.log("GEOLOACTION", geoLocation);
       return Spot.find({
         $and: [
           {
-            startTime: { $gte: req.query.startDate + " " + req.query.startTime }
+            startTime: { $lt: req.query.endDate + " " + req.query.endTime },
           },
-          { endTime: { $lte: req.query.endDate + " " + req.query.endTime } },
+          { endTime: { $gt: req.query.startDate + " " + req.query.startTime } },
           {
             geoLocation: {
               $near: {
                 $maxDistance: 200000,
                 $geometry: {
                   type: "Point",
-                  coordinates: [geoLocation.longitude, geoLocation.latitude]
-                }
-              }
-            }
-          }
-        ]
-      }).then(spots => {
+                  coordinates: [geoLocation.longitude, geoLocation.latitude],
+                },
+              },
+            },
+          },
+        ],
+      }).then((spots) => {
         res.render("parking-spots/list.hbs", {
           spots,
           spotDetail: JSON.stringify(spots),
-          user: req.session.user
+          user: req.session.user,
         });
       });
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
@@ -91,7 +91,7 @@ router.post("/add", loginCheck, (req, res, next) => {
     endDate,
     startTime,
     endTime,
-    price
+    price,
   } = req.body;
 
   let longitude;
@@ -101,13 +101,13 @@ router.post("/add", loginCheck, (req, res, next) => {
     .geocode(
       `${req.body.streetAddress}, ${req.body.city}, ${req.body.state} ${req.body.zipCode}, ${req.body.country}`
     )
-    .then(res => {
+    .then((res) => {
       let longitude = res[0].longitude;
       let latitude = res[0].latitude;
       // console.log("LONGITUDE", longitude, "LATITUDE", latitude);
       return { longitude, latitude };
     })
-    .then(geoLocation => {
+    .then((geoLocation) => {
       return Spot.create({
         name,
         description,
@@ -118,7 +118,7 @@ router.post("/add", loginCheck, (req, res, next) => {
         country,
         geoLocation: {
           type: "Point",
-          coordinates: [geoLocation.longitude, geoLocation.latitude]
+          coordinates: [geoLocation.longitude, geoLocation.latitude],
         },
         size,
         type,
@@ -127,30 +127,30 @@ router.post("/add", loginCheck, (req, res, next) => {
         startTime: startDate + " " + startTime,
         endTime: endDate + " " + endTime,
         price,
-        owner: req.session.user._id
+        owner: req.session.user._id,
       })
-        .then(createdSpot => {
+        .then((createdSpot) => {
           console.log(createdSpot);
           if (req.session.user.role === "basic") {
             return User.findByIdAndUpdate(
               req.session.user._id,
               { role: "host" },
               { new: true }
-            ).then(updatedUser => {
+            ).then((updatedUser) => {
               return {
                 user: updatedUser,
-                createdSpot: createdSpot
+                createdSpot: createdSpot,
               };
             });
           }
           return { user: req.session.user, createdSpot: createdSpot };
         })
-        .then(result => {
+        .then((result) => {
           req.session.user = result.user;
           res.redirect(`/parking-spots/detail/${result.createdSpot._id}`);
         });
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
@@ -159,9 +159,9 @@ router.get("/detail/:id", (req, res, next) => {
   Spot.findById(req.params.id)
     // .populate("owner - also can populate reviews here when added. Look at monti's room example for syntax")
     .populate({
-      path: "owner"
+      path: "owner",
     })
-    .then(spot => {
+    .then((spot) => {
       let showDelete = false;
       let showEdit = false;
       if (
@@ -176,19 +176,19 @@ router.get("/detail/:id", (req, res, next) => {
         spotDetail: JSON.stringify(spot),
         showDelete: showDelete,
         showEdit: showEdit,
-        user: req.session.user
+        user: req.session.user,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
 
 router.get("/edit/:id", loginCheck, (req, res) => {
-  Spot.findById(req.params.id).then(spot => {
+  Spot.findById(req.params.id).then((spot) => {
     console.log("spot", spot);
     res.render("parking-spots/edit.hbs", {
-      spot: spot
+      spot: spot,
     });
   });
 });
@@ -208,7 +208,7 @@ router.post("/edit/:id", (req, res, next) => {
     endDate,
     startTime,
     endTime,
-    price
+    price,
   } = req.body;
 
   let longitude;
@@ -218,13 +218,13 @@ router.post("/edit/:id", (req, res, next) => {
     .geocode(
       `${req.body.streetAddress}, ${req.body.city}, ${req.body.state} ${req.body.zipCode}, ${req.body.country}`
     )
-    .then(res => {
+    .then((res) => {
       let longitude = res[0].longitude;
       let latitude = res[0].latitude;
       // console.log("LONGITUDE", longitude, "LATITUDE", latitude);
       return { longitude, latitude };
     })
-    .then(geoLocation => {
+    .then((geoLocation) => {
       return Spot.updateOne(
         { _id: req.params.id },
         {
@@ -237,7 +237,7 @@ router.post("/edit/:id", (req, res, next) => {
           country,
           geoLocation: {
             type: "Point",
-            coordinates: [geoLocation.longitude, geoLocation.latitude]
+            coordinates: [geoLocation.longitude, geoLocation.latitude],
           },
           size,
           type,
@@ -246,13 +246,13 @@ router.post("/edit/:id", (req, res, next) => {
           startTime: startDate + " " + startTime,
           endTime: endDate + " " + endTime,
           price,
-          owner: req.session.user._id
+          owner: req.session.user._id,
         }
       ).then(() => {
         res.redirect(`/parking-spots/detail/${req.params.id}`);
       });
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
@@ -262,7 +262,7 @@ router.get("/delete/:id", (req, res, next) => {
     .then(() => {
       res.redirect("/parking-spots/list");
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
