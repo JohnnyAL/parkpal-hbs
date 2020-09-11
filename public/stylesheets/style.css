@@ -137,7 +137,8 @@ nav {
   padding-top: 5%; }
 
 .available-spots a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #0781b9; }
 
 .spot-listing {
   width: 40%; }
