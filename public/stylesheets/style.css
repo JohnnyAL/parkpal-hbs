@@ -237,7 +237,8 @@ nav {
   font-size: 1.5em; }
 
 .add-edit a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #0781b9; }
 
 .error-message {
   color: red;
