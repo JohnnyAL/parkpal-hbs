@@ -127,7 +127,8 @@ nav {
   border-radius: 0.2em; }
 
 .search-box a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #0781b9; }
 
 .available-spots {
   background-color: #a3e2ff2f;
