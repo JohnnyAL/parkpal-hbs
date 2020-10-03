@@ -236,7 +236,8 @@ nav {
 .add-edit-form button {
   width: 100%;
   padding: 2%;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  border-radius: 0.2em; }
 
 .add-edit a {
   text-decoration: none;
