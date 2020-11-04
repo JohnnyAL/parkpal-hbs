@@ -13,11 +13,10 @@ body {
 }
 
 .home-page-top {
-  height: 800px;
+  height: 100vh;
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 1100px;
+  background-size: 100% 100%;
 }
 
 .brand-box {
