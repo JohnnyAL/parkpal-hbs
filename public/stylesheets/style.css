@@ -209,7 +209,8 @@ nav {
 .auth-inputs button {
   width: 25%;
   padding: 2%;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: #0781b99c; }
 
 .auth-inputs input {
   width: 40%;
