@@ -248,6 +248,9 @@ nav {
   border-radius: 0.2em;
   background-color: #0781b99c; }
 
+.add-edit-form button:hover {
+  background-color: #1fa9e99c; }
+
 .add-edit a {
   text-decoration: none;
   color: #0781b9; }
