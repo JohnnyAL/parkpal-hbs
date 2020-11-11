@@ -212,6 +212,9 @@ nav {
   border-radius: 10px;
   background-color: #0781b99c; }
 
+.auth-inputs button:hover {
+  background-color: #1fa9e99c; }
+
 .auth-inputs input {
   width: 40%;
   font-family: "Poppins";
