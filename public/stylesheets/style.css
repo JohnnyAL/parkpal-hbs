@@ -3,65 +3,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 body {
   font-family: "Poppins";
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 .home-page-top {
   height: 100vh;
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
+  background-size: 100% 100%; }
 
 .brand-box {
   font-family: "Leckerli One";
   display: flex;
   align-items: center;
-  font-size: 2em;
-}
+  font-size: 2em; }
 
 nav {
   color: #0781b9;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.527),
-    rgba(128, 128, 128, 0)
-  );
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(128, 128, 128, 0));
   text-shadow: white 0 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1%;
-}
+  padding: 1%; }
 
 #car-logo {
   width: 50px;
   border: 2px solid white;
   border-radius: 10px;
-  margin-right: 7%;
-}
+  margin-right: 7%; }
 
 .nav-links ul {
-  font-size: 1.3em;
+  font-size: 1.2em;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  width: 600px;
-}
+  width: 500px; }
 
 .nav-links ul a {
   color: black;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .nav-links ul a:hover {
-  color: white;
-}
+  color: white; }
 
 .search-box {
   color: #474747;
@@ -76,12 +64,10 @@ nav {
   height: 500px;
   margin-top: 5%;
   margin-left: 9%;
-  padding: 1%;
-}
+  padding: 1%; }
 
 .search-box h3 {
-  font-size: 2em;
-}
+  font-size: 2em; }
 
 .search-form {
   display: flex;
@@ -90,16 +76,14 @@ nav {
   align-items: center;
   text-align: center;
   height: 80%;
-  padding-top: 6%;
-}
+  padding-top: 6%; }
 
 .search-location {
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 80%;
-}
+  width: 80%; }
 
 .search-date {
   font-size: 1em;
@@ -107,40 +91,34 @@ nav {
   justify-content: space-between;
   text-emphasis: none;
   text-align: left;
-  width: 80%;
-}
+  width: 80%; }
 
 .search-date-from {
   display: flex;
   flex-direction: column;
-  width: 45%;
-}
+  width: 45%; }
 
 .search-date-to {
   display: flex;
   flex-direction: column;
-  width: 45%;
-}
+  width: 45%; }
 
 .search-form input {
   font-family: "Poppins";
   font-size: 1em;
   padding: 1%;
-  border-radius: 0.2em;
-}
+  border-radius: 0.2em; }
 
 .search-long-term {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 16%;
-}
+  height: 16%; }
 
 .search-long-term a {
   font-size: 1.2em;
   color: #0781b9;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .search-box button {
   font-size: 2em;
@@ -149,34 +127,28 @@ nav {
   background-color: #30ac65;
   padding: 2.5% 19%;
   margin-bottom: 5%;
-  border-radius: 0.2em;
-}
+  border-radius: 0.2em; }
 
 .search-box button:hover {
-  background-color: #33c070;
-}
+  background-color: #33c070; }
 
 .search-box a {
   text-decoration: none;
-  color: #0781b9;
-}
+  color: #0781b9; }
 
 .available-spots {
   background-color: #a3e2ff2f;
   height: 1600px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 5%;
-}
+  padding-top: 5%; }
 
 .available-spots a {
   text-decoration: none;
-  color: #0781b9;
-}
+  color: #0781b9; }
 
 .spot-listing {
-  width: 35%;
-}
+  width: 35%; }
 
 .spot-listing ul {
   list-style: none;
@@ -184,21 +156,18 @@ nav {
   border-radius: 12px;
   box-shadow: 1px 1px 5px 0 black;
   padding: 2%;
-  line-height: 2em;
-}
+  line-height: 2em; }
 
 .detail {
   background-color: #a3e2ff2f;
   height: 1100px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 3%;
-}
+  padding-top: 3%; }
 
 .detail a {
   text-decoration: none;
-  color: #0781b9;
-}
+  color: #0781b9; }
 
 .spot-details {
   background-color: rgba(255, 255, 255, 0.774);
@@ -206,19 +175,16 @@ nav {
   box-shadow: 1px 1px 5px 0 black;
   width: 40%;
   height: 700px;
-  padding: 1%;
-}
+  padding: 1%; }
 
 .spot-details span {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .auth {
   background-color: #a3e2ff2f;
   height: 1500px;
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .auth-form {
   background-color: white;
@@ -232,33 +198,28 @@ nav {
   box-shadow: 1px 1px 5px 0 black;
   padding-top: 3%;
   margin-top: 5%;
-  padding-bottom: 1%;
-}
+  padding-bottom: 1%; }
 
 .auth-inputs {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-}
+  align-items: center; }
 
 .auth-inputs button {
   width: 25%;
   padding: 2%;
   border-radius: 7px;
-  background-color: #0781b99c;
-}
+  background-color: #0781b99c; }
 
 .auth-inputs button:hover {
-  background-color: #1fa9e99c;
-}
+  background-color: #1fa9e99c; }
 
 .auth-inputs input {
   width: 40%;
   font-family: "Poppins";
   padding: 1%;
-  border-radius: 0.2em;
-}
+  border-radius: 0.2em; }
 
 .add-edit {
   background-color: #a3e2ff2f;
@@ -266,8 +227,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3%;
-}
+  padding-top: 3%; }
 
 .add-edit-form {
   background-color: white;
@@ -277,42 +237,35 @@ nav {
   padding-top: 3%;
   padding: 3%;
   line-height: 2em;
-  margin-bottom: 2%;
-}
+  margin-bottom: 2%; }
 
 .add-edit-form input {
   font-family: "Poppins";
   padding: 0.5%;
-  border-radius: 0.2em;
-}
+  border-radius: 0.2em; }
 
 .add-edit-form button {
   width: 100%;
   padding: 2%;
   font-size: 1.5em;
   border-radius: 0.2em;
-  background-color: #0781b99c;
-}
+  background-color: #0781b99c; }
 
 .add-edit-form button:hover {
-  background-color: #1fa9e99c;
-}
+  background-color: #1fa9e99c; }
 
 .add-edit a {
   text-decoration: none;
-  color: #0781b9;
-}
+  color: #0781b9; }
 
 .error-message {
   color: red;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .spot-gen-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
+  align-items: center; }
 
 .book-button {
   background-color: #37a56762;
@@ -320,8 +273,7 @@ nav {
   border-radius: 7px;
   padding: 1% 1%;
   width: 30%;
-  text-align: center;
-}
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */
