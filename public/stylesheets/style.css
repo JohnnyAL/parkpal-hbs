@@ -184,7 +184,9 @@ nav {
   background-color: #a3e2ff2f;
   height: 1500px;
   display: flex;
-  justify-content: center; }
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
 
 .auth-form {
   background-color: white;
@@ -197,8 +199,9 @@ nav {
   border-radius: 2%;
   box-shadow: 1px 1px 5px 0 black;
   padding-top: 3%;
+  padding-bottom: 1%;
   margin-top: 5%;
-  padding-bottom: 1%; }
+  margin-bottom: 1%; }
 
 .auth-inputs {
   display: flex;
