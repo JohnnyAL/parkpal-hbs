@@ -30,37 +30,37 @@ router.post("/signup", (req, res, next) => {
   }
   if (password.length < 6) {
     res.render("auth/signup", {
-      errorMessage: "Password must be at least 6 characters."
+      errorMessage: "Password must be at least 6 characters.",
     });
     return;
   }
 
   User.findOne({ username: username })
-    .then(user => {
+    .then((user) => {
       if (user) {
         res.render("auth/signup", {
-          errorMessage: "Username already taken. Please try again."
+          errorMessage: "Username already taken. Please try again.",
         });
         return;
       }
 
       bcrypt
         .hash(password, 10)
-        .then(hash => {
+        .then((hash) => {
           return User.create({
             username: username,
             password: hash,
-            role: role
+            role: role,
           });
         })
-        .then(createdUser => {
+        .then((createdUser) => {
           console.log(createdUser);
 
           req.session.user = createdUser;
           res.redirect("/");
         });
     })
-    .catch(err => {
+    .catch((err) => {
       next(err);
     });
 });
@@ -76,7 +76,7 @@ router.post("/login", (req, res, next) => {
   let user;
 
   User.findOne({ username: username })
-    .then(foundUser => {
+    .then((foundUser) => {
       if (!foundUser) {
         res.render("auth/login", { errorMessage: "Invalid Credentials" });
         return;
@@ -86,7 +86,7 @@ router.post("/login", (req, res, next) => {
 
       return bcrypt.compare(password, foundUser.password);
     })
-    .then(match => {
+    .then((match) => {
       if (!match) {
         res.render("auth/login", { errorMessage: "Invalid Credentials" });
         return;
@@ -98,7 +98,7 @@ router.post("/login", (req, res, next) => {
 });
 
 router.get("/logout", (req, res, next) => {
-  req.session.destroy(err => {
+  req.session.destroy((err) => {
     if (err) next(err);
     res.redirect("/");
   });
