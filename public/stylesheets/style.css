@@ -196,7 +196,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 2%;
+  border-radius: 3%;
   box-shadow: 1px 1px 5px 0 black;
   padding-top: 3%;
   padding-bottom: 1%;
