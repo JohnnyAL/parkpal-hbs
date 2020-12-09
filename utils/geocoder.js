@@ -4,7 +4,7 @@ const options = {
   provider: "mapquest",
   httpAdapter: "https",
   apiKey: process.env.CLIENT_KEY,
-  formatter: null
+  formatter: null,
 };
 
 const geocoder = NodeGeocoder(options);
