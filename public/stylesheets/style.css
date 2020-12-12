@@ -277,13 +277,16 @@ nav {
   align-items: center; }
 
 .book-button {
-  background-color: #70c595c2;
+  background-color: #54c258;
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 0 black;
   padding: 1% 1%;
   width: 20%;
   text-align: center; }
+
+.book-button:hover {
+  background-color: green; }
 
 /*# sourceMappingURL=style.css.map */
 /*# sourceMappingURL=style.css.map */
