@@ -215,6 +215,11 @@ nav {
   font-weight: bold;
 }
 
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .auth {
   background-color: #a3e2ff2f;
   height: 1500px;
