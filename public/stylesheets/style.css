@@ -276,8 +276,17 @@ nav {
   justify-content: space-between;
   align-items: center; }
 
+.detail-link {
+  background-color: #f3f3f3;
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px 0 black;
+  padding: 1% 1%;
+  width: 20%;
+  text-align: center; }
+
 .book-button {
-  background-color: #54c258;
+  background-color: #42b842;
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 0 black;
