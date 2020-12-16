@@ -217,10 +217,10 @@ nav {
   width: 25%;
   padding: 2%;
   border-radius: 7px;
-  background-color: #0781b99c; }
+  background-color: #1fa9e99c; }
 
 .auth-inputs button:hover {
-  background-color: #1fa9e99c; }
+  background-color: #068bc99c; }
 
 .auth-inputs input {
   width: 40%;
