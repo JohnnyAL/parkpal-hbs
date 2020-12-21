@@ -279,13 +279,16 @@ nav {
   align-items: center; }
 
 .detail-link {
-  background-color: #f3f3f3;
+  background: linear-gradient(to bottom, #f3f3f3 5%, #b9b9b9 100%);
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 0 black;
   padding: 1% 1%;
   width: 20%;
   text-align: center; }
+
+.detail-link:hover {
+  background: linear-gradient(to bottom, #b9b9b9 5%, #f3f3f3 100%); }
 
 .book-button {
   background: linear-gradient(to bottom, #33c070 5%, #30ac65 100%);

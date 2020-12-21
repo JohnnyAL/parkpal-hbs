@@ -331,13 +331,25 @@ nav {
 }
 
 .detail-link {
-  background-color: rgb(243, 243, 243);
+  background: linear-gradient(
+    to bottom,
+    rgb(243, 243, 243) 5%,
+    rgb(185, 185, 185) 100%
+  );
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 0 black;
   padding: 1% 1%;
   width: 20%;
   text-align: center;
+}
+
+.detail-link:hover {
+  background: linear-gradient(
+    to bottom,
+    rgb(185, 185, 185) 5%,
+    rgb(243, 243, 243) 100%
+  );
 }
 
 .book-button {
