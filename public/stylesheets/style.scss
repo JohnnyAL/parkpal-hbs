@@ -341,7 +341,7 @@ nav {
 }
 
 .book-button {
-  background-color: rgb(66, 184, 66);
+  background: linear-gradient(to bottom, #33c070 5%, #30ac65 100%);
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 0 black;
@@ -351,7 +351,7 @@ nav {
 }
 
 .book-button:hover {
-  background-color: green;
+  background: linear-gradient(to bottom, #30ac65 5%, #33c070 100%);
 }
 
 /*# sourceMappingURL=style.css.map */
