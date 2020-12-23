@@ -173,7 +173,6 @@ nav {
 
 .available-spots a {
   text-decoration: none;
-  color: #0781b9;
 }
 
 .spot-listing {
@@ -330,12 +329,13 @@ nav {
   align-items: center;
 }
 
+.spot-gen-info > li > a {
+  color: #0781b9;
+}
+
 .detail-link {
-  background: linear-gradient(
-    to bottom,
-    rgb(243, 243, 243) 5%,
-    rgb(185, 185, 185) 100%
-  );
+  color: white;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
   border: 1px solid black;
   border-radius: 7px;
   box-shadow: 1px 1px 3px 0 black;
@@ -345,11 +345,7 @@ nav {
 }
 
 .detail-link:hover {
-  background: linear-gradient(
-    to bottom,
-    rgb(185, 185, 185) 5%,
-    rgb(243, 243, 243) 100%
-  );
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 }
 
 .book-button {
