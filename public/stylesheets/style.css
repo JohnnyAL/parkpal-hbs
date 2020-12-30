@@ -202,7 +202,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 3%;
+  border-radius: 4%;
   box-shadow: 1px 1px 5px 0 black;
   padding-top: 3%;
   padding-bottom: 1.5%;
