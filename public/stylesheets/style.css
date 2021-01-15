@@ -277,7 +277,8 @@ nav {
   color: #0781b9; }
 
 .error-message {
-  color: red; }
+  color: red;
+  font-weight: bold; }
 
 .spot-gen-info {
   display: flex;
