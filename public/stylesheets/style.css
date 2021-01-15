@@ -176,8 +176,12 @@ nav {
   height: 700px;
   padding: 1%; }
 
+.detail-heading {
+  color: #0781b9; }
+
 .detail-price {
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  color: #0781b9; }
 
 .spot-details span {
   font-weight: bold; }
