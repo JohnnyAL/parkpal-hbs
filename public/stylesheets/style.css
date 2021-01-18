@@ -146,6 +146,10 @@ nav {
 .available-spots a {
   text-decoration: none; }
 
+.available-spots hr {
+  border-style: none;
+  border-top: 2px dotted black; }
+
 .spot-listing {
   width: 40%; }
 
