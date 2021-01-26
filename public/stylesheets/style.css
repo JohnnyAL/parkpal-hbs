@@ -282,7 +282,8 @@ hr {
 .spot-gen-info {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  padding: 1% 0; }
 
 .spot-gen-info > li > a {
   color: #0781b9; }
