@@ -184,7 +184,8 @@ hr {
   font-size: 1.3em; }
 
 .spot-details span {
-  font-weight: bold; }
+  font-weight: bold;
+  text-decoration: underline; }
 
 .detail-header {
   display: flex;
