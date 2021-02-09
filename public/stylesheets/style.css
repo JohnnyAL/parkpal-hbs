@@ -162,6 +162,7 @@ hr {
   line-height: 2em; }
 
 .detail {
+  color: #474747;
   background-color: #a3e2ff2f;
   height: 1100px;
   display: flex;
