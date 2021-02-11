@@ -19,7 +19,7 @@ body {
   font-family: "Leckerli One";
   display: flex;
   align-items: center;
-  font-size: 1.8em; }
+  font-size: 1.7em; }
 
 nav {
   color: #0781b9;
@@ -31,7 +31,7 @@ nav {
   padding: 1%; }
 
 #car-logo {
-  width: 50px;
+  width: 48px;
   border: 2px solid white;
   border-radius: 10px;
   margin-right: 7%; }
