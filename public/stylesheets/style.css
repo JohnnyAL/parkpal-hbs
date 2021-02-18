@@ -125,9 +125,10 @@ nav {
   color: white;
   box-shadow: 1px 1px 5px 0 gray;
   background: linear-gradient(to bottom, #33c070 5%, #30ac65 100%);
-  padding: 2.5% 19%;
+  padding: 2.5%;
   margin-bottom: 5%;
-  border-radius: 0.2em; }
+  border-radius: 0.2em;
+  width: 90%; }
 
 .search-box button:hover {
   background: linear-gradient(to bottom, #30ac65 5%, #33c070 100%); }
