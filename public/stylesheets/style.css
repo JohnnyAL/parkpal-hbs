@@ -128,7 +128,7 @@ nav {
   padding: 2.5%;
   margin-bottom: 5%;
   border-radius: 0.2em;
-  width: 90%; }
+  width: 90; }
 
 .search-box button:hover {
   background: linear-gradient(to bottom, #30ac65 5%, #33c070 100%); }
@@ -223,7 +223,7 @@ hr {
 .auth-inputs button {
   width: 25%;
   padding: 2%;
-  border-radius: 7px;
+  border-radius: 6px;
   color: white;
   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%); }
 
