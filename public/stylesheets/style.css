@@ -261,6 +261,9 @@ hr {
   padding: 0.5%;
   border-radius: 0.2em; }
 
+#description {
+  width: 75%; }
+
 .add-edit-form button {
   width: 100%;
   padding: 2%;
