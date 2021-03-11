@@ -202,8 +202,8 @@ hr {
 .auth-form {
   background-color: white;
   text-align: center;
-  height: 400px;
-  width: 500px;
+  height: 375px;
+  width: 475px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
