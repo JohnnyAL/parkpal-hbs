@@ -163,7 +163,7 @@ hr {
   line-height: 2em; }
 
 .detail {
-  background-color: #a3e2ff2f;
+  background-color: #849aa8;
   height: 1100px;
   display: flex;
   justify-content: space-evenly;
@@ -192,7 +192,7 @@ hr {
   justify-content: space-between; }
 
 .auth {
-  background-color: #a3e2ff2f;
+  background-color: #849aa8;
   height: 1500px;
   display: flex;
   flex-direction: column;
@@ -239,7 +239,7 @@ hr {
   text-decoration: none; }
 
 .add-edit {
-  background-color: #a3e2ff2f;
+  background-color: #849aa8;
   height: 1100px;
   display: flex;
   flex-direction: column;
