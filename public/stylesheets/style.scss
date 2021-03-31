@@ -334,7 +334,6 @@ hr {
 
 .add-edit a {
   text-decoration: none;
-  color: #0781b9;
 }
 
 .error-message {
@@ -385,6 +384,10 @@ hr {
 }
 
 .home-btn {
+  color: black;
+}
+
+.home-btn:hover {
   color: white;
 }
 

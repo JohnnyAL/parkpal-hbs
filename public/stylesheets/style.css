@@ -275,8 +275,7 @@ hr {
   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%); }
 
 .add-edit a {
-  text-decoration: none;
-  color: #0781b9; }
+  text-decoration: none; }
 
 .error-message {
   color: red;
@@ -318,6 +317,9 @@ hr {
   background: linear-gradient(to bottom, #30ac65 5%, #33c070 100%); }
 
 .home-btn {
+  color: black; }
+
+.home-btn:hover {
   color: white; }
 
 /*# sourceMappingURL=style.css.map */
