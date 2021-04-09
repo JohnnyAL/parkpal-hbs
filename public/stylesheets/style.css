@@ -316,10 +316,10 @@ hr {
 .book-button:hover {
   background: linear-gradient(to bottom, #30ac65 5%, #33c070 100%); }
 
-.home-btn {
+.footer-links {
   color: black; }
 
-.home-btn:hover {
+.footer-links:hover {
   color: white; }
 
 /*# sourceMappingURL=style.css.map */
