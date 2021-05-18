@@ -43,10 +43,8 @@
     zoom: 10.5,
     attributionControl: false
   });
-
   const nav = new mapboxgl.NavigationControl();
   map.addControl(nav, "top-right"); // where map refers to the name of our instance of Map  
-
   window.onload = () => {
     console.log(spotDetail)
     spotDetail.forEach((elem, index) => {
@@ -57,5 +55,4 @@
       marker.addTo(map);
     });
   };
-
 </script>
