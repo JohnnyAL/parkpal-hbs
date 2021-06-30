@@ -278,8 +278,7 @@ hr {
   text-decoration: none; }
 
 .error-message {
-  color: red;
-  font-weight: bold; }
+  color: red; }
 
 .spot-gen-info {
   display: flex;
