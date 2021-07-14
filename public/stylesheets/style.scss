@@ -242,6 +242,7 @@ hr {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 5%;
 }
 
 .auth-form {
@@ -255,7 +256,6 @@ hr {
   border-radius: 3%;
   box-shadow: 1px 1px 5px 0 black;
   padding: 2% 0;
-  margin-top: 5%;
   margin-bottom: 1.5%;
 }
 
@@ -356,7 +356,7 @@ hr {
   color: white;
   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
   border: 1px solid black;
-  border-radius: 7px;
+  border-radius: 10px;
   box-shadow: 1px 1px 3px 0 black;
   padding: 1% 1%;
   width: 23%;
