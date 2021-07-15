@@ -7,17 +7,17 @@
     <div class="nav-links">
       <ul>
         {{#if user}}
-        {{#if_eq user.role "basic"}}
-        <li><a href="/parking-spots/add">Become a host</a></li>
-        <li><a href="/auth/logout">Log out</a></li>
+          {{#if_eq user.role "basic"}}
+            <li><a href="/parking-spots/add">Become a host</a></li>
+            <li><a href="/auth/logout">Log out</a></li>
+          {{else}}
+            <li><a href="/parking-spots/add">Post a parking spot</a></li>
+            <li><a href="/auth/logout">Log out</a></li>
+          {{/if_eq}}
         {{else}}
-        <li><a href="/parking-spots/add">Post a parking spot</a></li>
-        <li><a href="/auth/logout">Log out</a></li>
-        {{/if_eq}}
-        {{else}}
-        <li><a href="/auth/become-host">Become a host</a></li>
-        <li><a href="/auth/signup">Sign up</a></li>
-        <li><a href="/auth/login">Log in</a></li>
+          <li><a href="/auth/become-host">Become a host</a></li>
+          <li><a href="/auth/signup">Sign up</a></li>
+          <li><a href="/auth/login">Log in</a></li>
         {{/if}}
       </ul>
     </div>
@@ -26,36 +26,46 @@
   <!-- section 1 -->
   <section class="search-box">
     {{#if user}}
-    <h3 class="welcome-note">Hi, {{user.username}}! Find parking for work, leisure and more!</h3>
+      <h3 class="welcome-note">Hi,
+        {{user.username}}! Find parking for work, leisure and more!</h3>
     {{else}}
-    <h3>Find parking for work, leisure and more!</h3>
+      <h3>Find parking for work, leisure and more!</h3>
     {{/if}}
-    <form action="parking-spots/filtered-query" method="get" class="search-form">
+    <form
+      action="parking-spots/filtered-query"
+      method="get"
+      class="search-form"
+    >
       <div class="search-location">
         <label for="where">Where are you going?</label>
-        <input type="text" placeholder="Address, city, or zip code" id="where" name="location">
+        <input
+          type="text"
+          placeholder="Address, city, or zip code"
+          id="where"
+          name="location"
+        />
       </div>
       <div class="search-date">
         <div class="search-date-from">
           <label for="from-date">Arriving:</label>
-          <input type="date" id="from-date" name="startDate">
+          <input type="date" id="from-date" name="startDate" />
           <label for="from-time">at:</label>
-          <input type="time" id="from-time" name="startTime">
+          <input type="time" id="from-time" name="startTime" />
         </div>
         <div class="search-date-to">
           <label for="to-date">Departing:</label>
-          <input type="date" id="to-date" name="endDate">
+          <input type="date" id="to-date" name="endDate" />
           <label for="to-time">at:</label>
-          <input type="time" id="to-time" name="endTime">
+          <input type="time" id="to-time" name="endTime" />
         </div>
       </div>
-      <button type="submit">Search for Parking</button>
+      <button type="submit">Search for parking</button>
     </form>
     <a href="parking-spots/list">View all available parking spots</a>
   </section>
 </div>
 
-{{!-- <!-- section 2 -->
+{{! <!-- section 2 -->
 <section class="general-info">
   <h2>What we're all about</h2>
   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, iure provident. Officiis quae, alias
@@ -89,4 +99,4 @@
       <li><a href="#" target="_blank">Instagram</a></li>
     </ul>
   </div>
-</footer> --}}
+</footer> }}
