@@ -9,10 +9,10 @@
         {{#if user}}
           {{#if_eq user.role "basic"}}
             <li><a href="/parking-spots/add">Become a host</a></li>
-            <li><a href="/auth/logout">Log out</a></li>
+            <li><a href="/auth/logout">Sign out</a></li>
           {{else}}
             <li><a href="/parking-spots/add">Post a parking spot</a></li>
-            <li><a href="/auth/logout">Log out</a></li>
+            <li><a href="/auth/logout">Sign out</a></li>
           {{/if_eq}}
         {{else}}
           <li><a href="/auth/become-host">Become a host</a></li>
