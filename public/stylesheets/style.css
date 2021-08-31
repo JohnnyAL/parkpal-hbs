@@ -167,7 +167,7 @@ hr {
   height: 1500px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 4%; }
+  padding-top: 5%; }
 
 .detail a {
   text-decoration: none;
@@ -279,8 +279,7 @@ hr {
   text-decoration: none; }
 
 .error-message {
-  color: red;
-  font-weight: bold; }
+  color: red; }
 
 .spot-gen-info {
   display: flex;
