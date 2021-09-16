@@ -232,7 +232,7 @@ hr {
   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%); }
 
 .auth-inputs input {
-  width: 40%;
+  width: 45%;
   font-family: "Poppins";
   padding: 1%;
   border-radius: 0.4em; }
@@ -280,7 +280,8 @@ hr {
   text-decoration: none; }
 
 .error-message {
-  color: red; }
+  color: red;
+  font-weight: bold; }
 
 .spot-gen-info {
   display: flex;
