@@ -115,11 +115,6 @@ nav {
   justify-content: space-between;
   height: 16%; }
 
-.search-long-term a {
-  font-size: 1.2em;
-  color: #0781b9;
-  text-decoration: none; }
-
 .search-box button {
   font-size: 2em;
   color: white;
