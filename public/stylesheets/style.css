@@ -227,7 +227,7 @@ hr {
   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%); }
 
 .auth-inputs input {
-  width: 50%;
+  width: 45%;
   font-family: "Poppins";
   padding: 1%;
   border-radius: 0.4em; }
