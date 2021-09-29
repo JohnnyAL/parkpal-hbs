@@ -144,7 +144,7 @@ nav {
 
 hr {
   border-style: none;
-  border-top: 1.5px solid gray; }
+  border-top: 2px solid gray; }
 
 .spot-listing {
   width: 40%; }
@@ -204,7 +204,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 3%;
+  border-radius: 2%;
   box-shadow: 1px 1px 5px 0 black;
   padding: 2% 0.5%;
   margin-bottom: 1.5%; }
@@ -227,7 +227,7 @@ hr {
   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%); }
 
 .auth-inputs input {
-  width: 45%;
+  width: 50%;
   font-family: "Poppins";
   padding: 1%;
   border-radius: 0.4em; }
