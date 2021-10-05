@@ -147,7 +147,7 @@ hr {
   border-top: 0.5px solid gray; }
 
 .spot-listing {
-  width: 40%; }
+  width: 35%; }
 
 .spot-listing ul {
   font-size: 1em;
@@ -241,7 +241,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3%; }
+  padding-top: 5%; }
 
 .add-edit-form {
   background-color: rgba(255, 255, 255, 0.89);
