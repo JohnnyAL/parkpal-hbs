@@ -11,7 +11,7 @@ body {
   color: #353535; }
 
 .home-page-top {
-  height: 110vh;
+  height: 115vh;
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%; }
@@ -29,7 +29,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1% 2%; }
+  padding: 1% 2.5%; }
 
 #car-logo {
   width: 45px;
@@ -144,7 +144,7 @@ nav {
 
 hr {
   border-style: none;
-  border-top: 0.5px solid gray; }
+  border-top: 0.5px solid black; }
 
 .spot-listing {
   width: 40%; }
