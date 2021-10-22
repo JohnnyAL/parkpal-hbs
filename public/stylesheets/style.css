@@ -155,7 +155,7 @@ hr {
   background-color: rgba(255, 255, 255, 0.89);
   border-radius: 1.5%;
   box-shadow: 1px 1px 5px 0 black;
-  padding: 4%;
+  padding: 3% 4%;
   line-height: 2.2em; }
 
 .detail {
@@ -199,8 +199,8 @@ hr {
 .auth-form {
   background-color: rgba(255, 255, 255, 0.89);
   text-align: center;
-  height: 375px;
-  width: 475px;
+  height: 400px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
