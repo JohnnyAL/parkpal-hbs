@@ -32,7 +32,7 @@ nav {
   padding: 1% 2.5%; }
 
 #car-logo {
-  width: 45px;
+  width: 50px;
   border: 2px solid white;
   border-radius: 8px;
   margin-right: 7%; }
@@ -59,7 +59,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   width: 500px;
-  border-radius: 2%;
+  border-radius: 2.5%;
   box-shadow: 1px 1px 5px 0 black;
   height: 500px;
   margin-top: 5%;
