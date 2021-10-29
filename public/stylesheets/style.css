@@ -83,7 +83,7 @@ nav {
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 80%; }
+  width: 85%; }
 
 .search-date {
   font-size: 1em;
@@ -91,7 +91,7 @@ nav {
   justify-content: space-between;
   text-emphasis: none;
   text-align: left;
-  width: 80%; }
+  width: 85%; }
 
 .search-date-from {
   display: flex;
