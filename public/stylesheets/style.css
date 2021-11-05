@@ -137,7 +137,7 @@ nav {
   height: 1500px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 5%; }
+  padding-top: 3%; }
 
 .available-spots a {
   text-decoration: none; }
@@ -163,7 +163,7 @@ hr {
   height: 1500px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 5%; }
+  padding-top: 3%; }
 
 .detail a {
   text-decoration: none;
@@ -199,8 +199,8 @@ hr {
 .auth-form {
   background-color: rgba(255, 255, 255, 0.89);
   text-align: center;
-  height: 400px;
-  width: 500px;
+  height: 375px;
+  width: 475px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -217,7 +217,7 @@ hr {
 
 .auth-inputs button {
   font-size: 0.9em;
-  width: 30%;
+  width: 35%;
   padding: 2.2%;
   border-radius: 6px;
   color: white;
@@ -227,7 +227,7 @@ hr {
   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%); }
 
 .auth-inputs input {
-  width: 40%;
+  width: 50%;
   font-family: "Poppins";
   padding: 1%;
   border-radius: 0.4em; }
